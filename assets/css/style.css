@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.countdown {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background: #997e6bd1;
+}
+
+.countdown__image {
+  position: relative;
+  width: 700px;
+  height: 100%;
+  background: url('../images/bg-coffee.jpg') no-repeat;
+  background-size: cover;
+}
+
+.countdown__timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: calc(100% - 450px);
+}
+.countdown__timer-title {
+  text-align: center;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 500;
+  line-height: 4em;
+  color: #fff;
+}
+.countdown__timer-title span {
+  font-family: 'Sacramento', cursive;
+  font-size: 5em;
+  font-weight: 700;
+}
+.countdown__timer-title span i {
+  font-family: 'Sacramento', cursive;
+  font-style: initial;
+  color: #a81305;
+}
+
+.countdown__timer-list {
+  margin-top: 30px;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.1);
+}
+.countdown__timer-item {
+  position: relative;
+  width: 100px;
+  margin: 0 15px;
+  margin-top: -25px;
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: 500;
+  color: #fff;
+}
+.countdown__timer-item::before {
+  content: 'text';
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  width: 100%;
+  height: 35px;
+  font-size: 0.35em;
+  font-weight: 500;
+  line-height: 35px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.countdown__timer-item#day::before {
+  content: 'Days';
+}
+.countdown__timer-item#hour::before {
+  content: 'Hours';
+}
+.countdown__timer-item#minute::before {
+  content: 'Minutes';
+}
+.countdown__timer-item#second::before {
+  content: 'Seconds';
+}
+.countdown__timer-item#second,
+.countdown__timer-item#second::before {
+  color: #a81305;
+}
+
+
+/* Media queries */
+@media (max-width: 991px) {
+  .countdown__image {
+    display: none;
+  }
+  .countdown__timer {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .countdown__timer .countdown__timer-title {
+    font-size: 1.1em;
+  }
+  .countdown__timer-list {
+    height: 100px;
+  }
+  .countdown__timer-item {
+    width: 80px;
+    font-size: 2em;
+    margin: 0;
+    margin-top: -25px;
+  }
+}
